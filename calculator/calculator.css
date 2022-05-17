@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --bg-color: #dddddd;
+  --white: #fff;
+  --cont-bg-color: #e8e6e6;
+  --border-color: rgb(196, 196, 196);
+  --light-blue: rgb(61, 55, 255);
+  --deep-blue: rgb(40, 33, 241);
+  --dark: rgb(102, 102, 102);
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  font-family: sans-serif;
+}
+
+.display-screen {
+  height: 12vh;
+  max-height: 12vh;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.5rem 2rem;
+  font-size: 2.5rem;
+}
+
+.container {
+  width: 35rem;
+  max-width: 35rem;
+  max-height: 90vh;
+  background-color: var(--cont-bg-color);
+  box-shadow: 0 2px 8px rgb(164, 164, 164);
+  overflow: hidden;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  padding: 2rem;
+}
+
+.button {
+  border: 1px solid var(--border-color);
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-transform: initial;
+  font-weight: 300;
+  transition: background-color 500ms ease;
+}
+
+.button:hover {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+#equals {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+#equals:hover {
+  background-color: var(--deep-blue);
+  color: var(--white);
+}
