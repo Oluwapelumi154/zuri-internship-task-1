@@ -8,9 +8,13 @@ for (let button of buttons) {
           displayScreen.innerText = displayScreen.innerText.slice(0, -1);
         }
         break;
-      case 'c':
-        displayScreen.innerText = '';
+      case 'clr':
+        displayScreen.innerText = '0';
         break;
+      case '.':
+        if (!displayScreen.innerText.includes('.')) {
+          displayScreen.innerText = `${displayScreen.innerText}.` + e.target.innerText;
+        }
       case '=':
         try {
           displayScreen.innerText = eval(displayScreen.innerText);
@@ -19,7 +23,9 @@ for (let button of buttons) {
         }
         break;
       default:
-        displayScreen.innerText += e.target.innerText;
+        const displayValue = displayScreen.innerText;
+        displayScreen.innerText =
+          displayValue === '0' ? e.target.innerText : displayScreen.innerText + e.target.innerText;
     }
   });
 }

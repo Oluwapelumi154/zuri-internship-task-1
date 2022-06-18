@@ -11,13 +11,14 @@ html {
 }
 
 :root {
-  --bg-color: #dddddd;
+  --bg-color: #fff;
   --white: #fff;
-  --cont-bg-color: #e8e6e6;
-  --border-color: rgb(196, 196, 196);
+  --cont-bg-color: #ececec;
+  --border-color: rgb(200, 199, 199);
   --light-blue: rgb(61, 55, 255);
   --deep-blue: rgb(40, 33, 241);
   --dark: rgb(102, 102, 102);
+  --red:red;
 }
 
 body {
@@ -30,29 +31,42 @@ body {
   font-family: sans-serif;
 }
 
-.display-screen {
-  height: 12vh;
-  max-height: 12vh;
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0.5rem 2rem;
-  font-size: 2.5rem;
-}
 
 .container {
-  width: 35rem;
-  max-width: 35rem;
-  max-height: 90vh;
+  width:38rem;
+  max-width: 38rem;
+  min-width: 35rem;
+  max-height: 100vh;
   background-color: var(--cont-bg-color);
   box-shadow: 0 2px 8px rgb(164, 164, 164);
   overflow: hidden;
+  border-radius: 5px;
+
+}
+
+.display-cont {
+  height: 12vh;
+  max-height: 12vh;
+  padding: 2rem 2rem;
+  background-color: var(--white);
+  border-radius: 5px;
+}
+.display-screen{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  font-size: 2.5rem;
+  font-weight: 500;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5,1fr);
   width: 100%;
   padding: 2rem;
 }
@@ -67,7 +81,10 @@ body {
   text-transform: initial;
   font-weight: 300;
   transition: background-color 500ms ease;
+  cursor: pointer;
 }
+
+
 
 .button:hover {
   background-color: var(--dark);
@@ -77,9 +94,14 @@ body {
 #equals {
   background-color: var(--light-blue);
   color: var(--white);
+  grid-column: 4/5;
+  grid-row: 3/7;
+  height: 100%;
+ 
 }
 
 #equals:hover {
   background-color: var(--deep-blue);
   color: var(--white);
+ 
 }
