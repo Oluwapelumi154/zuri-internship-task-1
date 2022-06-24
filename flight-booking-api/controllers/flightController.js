@@ -1,5 +1,7 @@
+// Dependencies
 let { flights } = require("../models/Flight");
 const crypto = require("crypto");
+
 exports.bookFlight = (req, res) => {
   const fields = ["title", "price"];
   const { body } = req;
