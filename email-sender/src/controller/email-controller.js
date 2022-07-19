@@ -6,7 +6,7 @@ exports.sendMailToUser = async (req, res) => {
     await sendEmail({
       from: 'Automated Email Testing',
       to: body.email,
-      subject: 'Welcome Automated Email Testing',
+      subject: 'Automated Email Testing',
       html: template(body.email, body.message)
     });
     return res.status(200).json({
