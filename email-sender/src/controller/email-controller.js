@@ -1,4 +1,4 @@
-const { sendEmail } = require('../../utils');
+const { sendEmail, template } = require('../utils');
 
 exports.sendMailToUser = async (req, res) => {
   const { body } = req;
@@ -7,7 +7,7 @@ exports.sendMailToUser = async (req, res) => {
       from: 'Automated Email Testing',
       to: body.email,
       subject: 'Welcome Automated Email Testing',
-      text: body.message
+      html: template(body.email, body.message)
     });
     return res.status(200).json({
       status: 'success',
